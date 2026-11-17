@@ -1,0 +1,230 @@
+
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    --primario: #2d2415;
+    --secundario: #6f5834;
+    --acento: #bc9e71;
+}
+
+/* ========================================
+   BODY
+======================================== */
+
+body {
+    font-family: "Roboto Mono", sans-serif;
+    font-weight: 200;
+    background-color: var(--acento);
+    color: var(--primario);
+    padding-top: 65px;
+}
+
+/* ========================================
+   NAVBAR BOOTSTRAP
+======================================== */
+
+.navbar-custom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 5rem;
+    background-color: var(--primario);
+}
+
+.navbar-custom .navbar-brand {
+    color: #e4d1b4;
+    transition: color 0.3s ease;
+}
+
+.navbar-custom .navbar-brand:hover {
+    color: var(--acento);
+}
+
+.navbar-custom .nav-link {
+    color: #e4d1b4;
+    transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+    color: var(--acento);
+}
+
+.navbar-custom .nav-link:focus {
+    color: var(--acento);
+    outline: 2px solid var(--acento);
+    outline-offset: 3px;
+}
+
+.navbar-custom .nav-link:active {
+    color: white;
+}
+
+.navbar-custom .nav-link.active {
+    color: var(--acento);
+    font-weight: bold;
+}
+
+/* Drawer móvil */
+
+.navbar-custom .drawer {
+    background-color: var(--primario);
+    color: #e4d1b4;
+}
+
+.navbar-custom .drawer-title {
+    color: #e4d1b4;
+}
+
+.navbar-custom .drawer-body .nav-link {
+    padding: 0.8rem;
+}
+
+/* Botón hamburguesa */
+
+.navbar-custom .navbar-toggler {
+    border-color: var(--acento);
+}
+
+/* ========================================
+   SECCIÓN PRINCIPAL
+======================================== */
+
+.grid-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 1rem;
+    text-align: center;
+}
+
+.info-izquierda {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+article {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.title {
+    color: var(--primario);
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   IMÁGENES
+======================================== */
+
+.imagen {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* ========================================
+   BOTONES E INTERACCIONES
+======================================== */
+
+button,
+.btn {
+    transition: all 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+button:focus,
+.btn:focus {
+    outline: 2px solid var(--secundario);
+    outline-offset: 3px;
+}
+
+button:active,
+.btn:active {
+    transform: scale(0.96);
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+/* ========================================
+   RESPONSIVE - TABLETS Y ESCRITORIO
+======================================== */
+
+@media (max-width: 767px) {
+
+    .navbar-custom {
+        padding: 1rem 1.5rem;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .navbar-custom {
+        padding: 1.5rem 5rem;
+    }
+
+    .grid-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "izquierda derecha";
+        column-gap: 4rem;
+        max-width: 1100px;
+        margin: 2rem auto;
+        text-align: center;
+        align-items: start;
+    }
+
+    .info-izquierda {
+        grid-area: izquierda;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+
+    .info-izquierda > h1 {
+        font-size: 2.2rem;
+        margin: 0;
+    }
+
+    .info-izquierda > article {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .grid-section > #carouselExampleFade {
+        grid-area: derecha;
+        width: 100%;
+    }
+
+}
